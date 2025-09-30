@@ -57,7 +57,7 @@
 	fill-opacity: 0;
 	stroke-width: 3px !important;
 	stroke-dasharray: 4500;
-	animation: draw 8s ease;
+	/* Removed CSS animation to let GSAP handle it */
 	margin-top: 2rem;
 }
 
@@ -84,7 +84,7 @@
 	font-weight: 300;
 	letter-spacing: 5px;
 	margin-top: -3rem;
-	animation: fadeIn 2s ease 2s both;
+	/* Removed CSS animation to let GSAP handle it */
 }
 
 .loading-dots {
@@ -162,30 +162,39 @@ const loadingTimeline = gsap.timeline({
   }
 });
 
+// Inicializar estados
+gsap.set("#svg", { strokeDashoffset: 4500 });
+gsap.set(".loading-text", { y: 30, opacity: 0 });
+
 loadingTimeline
   .fromTo(".logoEmpresa", {
     strokeDashoffset: 4500
   }, {
     strokeDashoffset: 0,
-    duration: 2,        // Reducido de 4 a 2 segundos
+    duration: 2,
     ease: "power2.inOut"
   })
-  .fromTo("#svg", {
-    strokeDashoffset: 4500
-  }, {
-    strokeDashoffset: 0,
-    duration: 3,        // Reducido de 6 a 3 segundos
-    ease: "power2.inOut"
-  }, "-=1")             // Reducido de -=2 a -=1 para menos superposición
-  .fromTo(".loading-text", {
-    y: 30,
-    opacity: 0
-  }, {
-    y: 0,
-    opacity: 1,
-    duration: 1,        // Reducido de 1.5 a 1 segundo
-    ease: "power2.out"
-  }, "-=2")             // Reducido de -=3 a -=2
+  // SVG y texto empiezan al mismo tiempo usando el método add()
+  .add([
+    gsap.fromTo("#svg", {
+      strokeDashoffset: 4500
+    }, {
+      strokeDashoffset: 0,
+      duration: 3,
+      ease: "power2.inOut"
+    }),
+    gsap.fromTo(".loading-text", {
+      y: 30,
+      opacity: 0
+    }, {
+      y: 0,
+      opacity: 1,
+      duration: 3,
+      ease: "power2.out"
+    })
+  ], "-=1") // Ambos empiezan 1 segundo antes del final del logo   
+  
+  
   .to(".loading-page", {
     opacity: 0,
     duration: 0.8,      // Reducido de 1.5 a 0.8 segundos
