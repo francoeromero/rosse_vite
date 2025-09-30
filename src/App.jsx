@@ -20,13 +20,13 @@ function App() {
     const hideLoadingTimer = setTimeout(() => {
       setIsLoading(false);
       console.log('Loading terminado, preparando contenido...');
-    }, 6500);  // 5 segundos para la animación de carga
+    }, 4000);  // 4 segundos para coincidir con el HTML
 
     // Timer 2: Mostrar contenido con animaciones después de un delay
     const showContentTimer = setTimeout(() => {
       setShowContent(true);
       console.log('Mostrando contenido con animaciones...');
-    }, 2000);  // 7 segundos total (5 de carga + 2 de delay)
+    }, 4100);  // 4.1 segundos total (solo 0.1s de delay)
 
     return () => {
       clearTimeout(hideLoadingTimer);
@@ -41,16 +41,16 @@ function App() {
     return null;
   }
 
-  // Si terminó la carga pero aún no debe mostrar contenido, mostrar fondo vacío
+  // Si terminó la carga pero aún no debe mostrar contenido, mostrar fondo vacío con fade
   if (!showContent) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-rose-50 via-blue-50 to-purple-50 opacity-100"></div>
+      <div className="min-h-screen bg-gradient-to-br from-rose-50 via-blue-50 to-purple-50 opacity-100 animate-fadeIn"></div>
     );
   }
 
   // Mostrar contenido completo con animaciones
   return (
-    <div className={`min-h-screen bg-gradient-to-br from-rose-50 via-blue-50 to-purple-50 animate-fadeIn`}>
+    <div className={`min-h-screen bg-gradient-to-br from-rose-50 via-blue-50 to-purple-50 animate-fadeIn transition-opacity duration-300`}>
       <Helmet>
         <title>ROSSE VITA - Salón de Eventos Elegante</title>
         <meta name="description" content="ROSSE VITA - Salón de eventos elegante para bodas, cumpleaños y eventos corporativos. Espacios únicos para celebrar tus momentos más especiales." />
