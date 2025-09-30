@@ -20,7 +20,7 @@ function App() {
     const hideLoadingTimer = setTimeout(() => {
       setIsLoading(false);
       console.log('Loading terminado, preparando contenido...');
-    }, 5500);  // 5 segundos para la animación de carga
+    }, 6500);  // 5 segundos para la animación de carga
 
     // Timer 2: Mostrar contenido con animaciones después de un delay
     const showContentTimer = setTimeout(() => {
