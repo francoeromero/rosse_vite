@@ -18,6 +18,21 @@ body {
   overflow-x: hidden;
 }
 
+#root {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* Estilos adicionales para la integración con la página de carga */
+.app-container {
+  min-height: 100vh;
+}
+
+/* Asegurar que la página de carga esté por encima de todo */
+.loading-page {
+  z-index: 99999999 !important;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif;
 }
