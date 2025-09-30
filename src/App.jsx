@@ -13,18 +13,44 @@ import QuoteModal from '@/components/QuoteModal';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    // Sincronizar con la animación GSAP del HTML
-    const timer = setTimeout(() => {
+    // Timer 1: Ocultar loading y preparar para mostrar contenido
+    const hideLoadingTimer = setTimeout(() => {
       setIsLoading(false);
-    }, 4000);  // Reducido de 6500 a 4000ms (4 segundos)
+      console.log('Loading terminado, preparando contenido...');
+    }, 5500);  // 5 segundos para la animación de carga
 
-    return () => clearTimeout(timer);
+    // Timer 2: Mostrar contenido con animaciones después de un delay
+    const showContentTimer = setTimeout(() => {
+      setShowContent(true);
+      console.log('Mostrando contenido con animaciones...');
+    }, 2000);  // 7 segundos total (5 de carga + 2 de delay)
+
+    return () => {
+      clearTimeout(hideLoadingTimer);
+      clearTimeout(showContentTimer);
+    };
   }, []);
 
+  console.log('App render - isLoading:', isLoading, 'showContent:', showContent);
+
+  // Si está cargando, no mostrar nada
+  if (isLoading) {
+    return null;
+  }
+
+  // Si terminó la carga pero aún no debe mostrar contenido, mostrar fondo vacío
+  if (!showContent) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-rose-50 via-blue-50 to-purple-50 opacity-100"></div>
+    );
+  }
+
+  // Mostrar contenido completo con animaciones
   return (
-    <div className={`min-h-screen bg-gradient-to-br from-rose-50 via-blue-50 to-purple-50 transition-opacity duration-1000 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+    <div className={`min-h-screen bg-gradient-to-br from-rose-50 via-blue-50 to-purple-50 animate-fadeIn`}>
       <Helmet>
         <title>ROSSE VITA - Salón de Eventos Elegante</title>
         <meta name="description" content="ROSSE VITA - Salón de eventos elegante para bodas, cumpleaños y eventos corporativos. Espacios únicos para celebrar tus momentos más especiales." />
@@ -35,13 +61,27 @@ function App() {
         <link rel="canonical" href="https://rossevita.com" />
       </Helmet>
       
-      <Header />
-      <Hero />
-      <Carousel3D />
-      <Services />
-      <Gallery />
-      <Contact />
-      <Footer />
+      <div className="animate-slideInUp animation-delay-100">
+        <Header />
+      </div>
+      <div className="animate-slideInUp animation-delay-200">
+        <Hero />
+      </div>
+      <div className="animate-slideInUp animation-delay-300">
+        <Carousel3D />
+      </div>
+      <div className="animate-slideInUp animation-delay-400">
+        <Services />
+      </div>
+      <div className="animate-slideInUp animation-delay-500">
+        <Gallery />
+      </div>
+      <div className="animate-slideInUp animation-delay-600">
+        <Contact />
+      </div>
+      <div className="animate-slideInUp animation-delay-700">
+        <Footer />
+      </div>
       <QuoteModal />
       <Toaster />
     </div>
