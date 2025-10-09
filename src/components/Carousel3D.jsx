@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Carousel3D = () => {
   const images = [
-    "https://static.wixstatic.com/media/3780e2_e4ec6cb42a804e0fbc0c9856a9cd551f~mv2.jpg/v1/fill/w_1225,h_973,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3780e2_e4ec6cb42a804e0fbc0c9856a9cd551f~mv2.jpg",
+    
     "https://static.wixstatic.com/media/3780e2_7ef9a76080174104bdd362f4f0ae70bd~mv2.jpg/v1/fill/w_640,h_420,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/3780e2_7ef9a76080174104bdd362f4f0ae70bd~mv2.jpg",
     "https://static.wixstatic.com/media/3780e2_f3e45d53a3024cec9544467e4db5a20f~mv2.jpg/v1/fill/w_503,h_335,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/3780e2_f3e45d53a3024cec9544467e4db5a20f~mv2.jpg",
     "https://static.wixstatic.com/media/3780e2_6c23ba6c8576400c9270c50f33e8d2ea~mv2_d_2048_1367_s_2.jpg/v1/fill/w_502,h_335,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/3780e2_6c23ba6c8576400c9270c50f33e8d2ea~mv2_d_2048_1367_s_2.jpg",

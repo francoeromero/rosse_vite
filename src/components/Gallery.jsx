@@ -7,14 +7,14 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   
   const images = [
-    "https://static.wixstatic.com/media/3780e2_e4ec6cb42a804e0fbc0c9856a9cd551f~mv2.jpg/v1/fill/w_1225,h_973,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3780e2_e4ec6cb42a804e0fbc0c9856a9cd551f~mv2.jpg",
-    "https://static.wixstatic.com/media/3780e2_7ef9a76080174104bdd362f4f0ae70bd~mv2.jpg/v1/fill/w_640,h_420,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/3780e2_7ef9a76080174104bdd362f4f0ae70bd~mv2.jpg",
+  
+    "../img/1.jpg",
     "https://static.wixstatic.com/media/3780e2_f3e45d53a3024cec9544467e4db5a20f~mv2.jpg/v1/fill/w_503,h_335,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/3780e2_f3e45d53a3024cec9544467e4db5a20f~mv2.jpg",
-    "https://static.wixstatic.com/media/3780e2_6c23ba6c8576400c9270c50f33e8d2ea~mv2_d_2048_1367_s_2.jpg/v1/fill/w_502,h_335,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/3780e2_6c23ba6c8576400c9270c50f33e8d2ea~mv2_d_2048_1367_s_2.jpg",
-    "https://static.wixstatic.com/media/3780e2_fe95d580086e45658efdba6898c62114~mv2_d_3870_2583_s_4_2.jpg/v1/fill/w_685,h_457,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/3780e2_fe95d580086e45658efdba6898c62114~mv2_d_3870_2583_s_4_2.jpg",
+  
+
     "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=1170&auto=format&fit=crop",
     "https://plus.unsplash.com/premium_photo-1664474653221-8412b8dfca3e?q=80&w=1169&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1556125574-d7f27ec36a06?q=80&w=1170&auto=format&fit=crop",
+
     "https://images.unsplash.com/photo-1628336707631-68131ca720c3?q=80&w=1170&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1561912774-79769a0a0a7a?q=80&w=1171&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1169&auto=format&fit=crop",
@@ -28,8 +28,7 @@ const Gallery = () => {
     "https://images.unsplash.com/photo-1621857584544-9e3d52a650df?q=80&w=1170&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=1170&auto=format&fit=crop",
     "https://plus.unsplash.com/premium_photo-1673897888993-a1db844c2ca1?q=80&w=687&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1550005809-91ad75fb315f?q=80&w=1169&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1556499696-0ba753b9ad02?q=80&w=687&auto=format&fit=crop"
+    "https://images.unsplash.com/photo-1550005809-91ad75fb315f?q=80&w=1169&auto=format&fit=crop"
   ];
 
   const openModal = (image, index) => {
