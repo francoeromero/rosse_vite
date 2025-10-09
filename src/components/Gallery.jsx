@@ -16,6 +16,60 @@ import img13 from '../../img/13.jpg';
 import img14 from '../../img/14.jpg';
 import img15 from '../../img/15.jpg';
 import img16 from '../../img/16.jpg';
+import img17 from '../../img/17.jpg';
+import img18 from '../../img/18.jpg';
+import img19 from '../../img/19.jpg';
+import img20 from '../../img/20.jpg';
+import img21 from '../../img/21.jpg'; 
+import img22 from '../../img/22.jpg';
+import img23 from '../../img/23.jpg';
+import img24 from '../../img/24.jpg';
+import img25 from '../../img/25.jpg';
+import img26 from '../../img/26.jpg';
+import img27 from '../../img/27.jpg';
+import img28 from '../../img/28.jpg';
+import img29 from '../../img/29.jpg';
+import img30 from '../../img/30.jpg';
+import img31 from '../../img/31.jpg';
+import img32 from '../../img/32.jpg';
+import img33 from '../../img/33.jpg';
+import img34 from '../../img/34.jpg';
+import img35 from '../../img/35.jpg';
+import img36 from '../../img/36.jpg';
+import img37 from '../../img/37.jpg';
+import img38 from '../../img/38.jpg';
+import img39 from '../../img/39.jpg';
+import img40 from '../../img/40.jpg';
+import img41 from '../../img/41.jpg';
+import img42 from '../../img/42.jpg';
+import img43 from '../../img/43.jpg';
+import img44 from '../../img/44.jpg';
+import img45 from '../../img/45.jpg';
+import img46 from '../../img/46.jpg';
+import img47 from '../../img/47.jpg';
+import img48 from '../../img/48.jpg';
+import img49 from '../../img/49.jpg';
+import img50 from '../../img/50.jpg';
+import img51 from '../../img/51.jpg';
+import img52 from '../../img/52.jpg';
+import img53 from '../../img/53.jpg';
+import img54 from '../../img/54.jpg';
+import img55 from '../../img/55.jpg';
+import img56 from '../../img/56.jpg';
+import img57 from '../../img/57.jpg';
+import img58 from '../../img/58.jpg';
+import img59 from '../../img/59.jpg';
+import img60 from '../../img/60.jpg';
+import img61 from '../../img/61.jpg';
+import img62 from '../../img/62.jpg';
+import img63 from '../../img/63.jpg';
+import img64 from '../../img/64.jpg';
+import img65 from '../../img/65.jpg';
+import img66 from '../../img/66.jpg';
+import img67 from '../../img/67.jpg';
+import img68 from '../../img/68.jpg';
+import img69 from '../../img/69.jpg';
+import img70 from '../../img/70.jpg';
 
 
 import { motion, AnimatePresence } from 'framer-motion';
@@ -25,7 +79,6 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   
   const images = [
-  
     img1,
     img2,
     img3,
@@ -42,7 +95,64 @@ const Gallery = () => {
     img14,
     img15,
     img16,
-    "https://static.wixstatic.com/media/3780e2_f3e45d53a3024cec9544467e4db5a20f~mv2.jpg/v1/fill/w_503,h_335,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/3780e2_f3e45d53a3024cec9544467e4db5a20f~mv2.jpg",
+    img17,
+    img18,
+    img19,
+    img20,
+    img21,
+    img22,
+    img23,
+    img24,
+    img25,
+    img26,
+    img27,
+    img28,
+    img29,
+    img30,
+    img31,
+    img32,
+    img33,
+    img34,
+    img35,   
+    img36,
+    img37,
+    img38,
+    img39,
+    img40,
+    img41,
+    img42,
+    img43,
+    img44,
+    img45,
+    img46,
+    img47,
+    img48,
+    img49,
+    img50,
+    img51,
+    img52,
+    img53,
+    img54,
+    img55,
+    img56,
+    img57,
+    img58,
+    img59,
+    img60,
+    img61,
+    img62,
+    img63,
+    img64,
+    img65,
+    img66,
+    img67,
+    img68,
+    img69,
+    img70,  
+      
+
+
+"https://static.wixstatic.com/media/3780e2_f3e45d53a3024cec9544467e4db5a20f~mv2.jpg/v1/fill/w_503,h_335,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/3780e2_f3e45d53a3024cec9544467e4db5a20f~mv2.jpg",
   
 
     "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=1170&auto=format&fit=crop",
