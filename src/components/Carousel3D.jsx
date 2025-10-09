@@ -2,21 +2,26 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import img1 from '../../img/1.jpg';
+import img from '../../img/16.jpg';
+import img2 from '../../img/2.jpg';
+import img3 from '../../img/3.jpg';
+import img5 from '../../img/5.jpg';
+import img7 from '../../img/7.jpg';
+import img8 from '../../img/8.jpg';
 
 const Carousel3D = () => {
   const images = [
     
     "https://static.wixstatic.com/media/3780e2_7ef9a76080174104bdd362f4f0ae70bd~mv2.jpg/v1/fill/w_640,h_420,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/3780e2_7ef9a76080174104bdd362f4f0ae70bd~mv2.jpg",
-    '../../img/1.jpg',
-    '../../img/16.jpg',
+    img,
+    img1,
 
-    , '../../img/2.jpg'
-    , '../../img/3.jpg',
-
-    '../../img/5.jpg',
-
-    '../../img/7.jpg',
-    '../../img/8.jpg'
+    , img2
+    , img3
+    , img5
+    , img7
+    , img8
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
