@@ -7,6 +7,8 @@ import { useToast } from '@/components/ui/use-toast';
 const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { toast } = useToast();
+  // Ensure video asset is processed by Vite bundler (works in production/Netlify)
+  const videoSrc = new URL('../../clips/fondo_eventos.mp4', import.meta.url).href;
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -22,7 +24,7 @@ const Hero = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <video
           className="w-full h-full object-cover"
-          src="/clips/fondo_eventos.mp4"
+          src={videoSrc}
           autoPlay
           muted
           loop
