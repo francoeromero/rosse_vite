@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import img1 from '../../img/1.jpg';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ZoomIn } from 'lucide-react';
 
@@ -8,7 +9,7 @@ const Gallery = () => {
   
   const images = [
   
-    "../img/1.jpg",
+    img1,
     "https://static.wixstatic.com/media/3780e2_f3e45d53a3024cec9544467e4db5a20f~mv2.jpg/v1/fill/w_503,h_335,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/3780e2_f3e45d53a3024cec9544467e4db5a20f~mv2.jpg",
   
 
