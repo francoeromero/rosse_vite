@@ -252,7 +252,7 @@ loadingTimeline
 		  // Ejemplo Argentina: 54911XXXXYYYY +54 9 11 6207-5702
 		  (function() {
 		    var number = (window.WHATSAPP_NUMBER || '5491162075702').toString().replace(/\D/g, '');
-		    var preset = encodeURIComponent('Hola! Vengo desde el sitio web.');
+		    var preset = encodeURIComponent('Hola! Vengo desde el sitio web. Estoy interesado en sus servicios.');
 		    var a = document.getElementById('whatsapp-float');
 		    if (a && number) {
 		      a.href = 'https://wa.me/' + number + '?text=' + preset;
