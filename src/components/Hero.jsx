@@ -28,6 +28,7 @@ const Hero = () => {
           autoPlay
           muted
           loop
+          preload="auto"
           playsInline
           aria-hidden="true"
         />

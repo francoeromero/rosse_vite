@@ -6,6 +6,17 @@
 		<meta name="generator" content="ROSSE VITA" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>ROSSE VITA - Salón de Eventos Elegante</title>
+		<!-- Preload background video early using Vite-resolved URL -->
+		<script type="module">
+		  // Resolve asset URL via Vite so it works in dev and production (Netlify)
+		  import videoUrl from './clips/fondo_eventos.mp4';
+		  const link = document.createElement('link');
+		  link.rel = 'preload';
+		  link.as = 'video';
+		  link.href = videoUrl;
+		  link.crossOrigin = 'anonymous';
+		  document.head.appendChild(link);
+		</script>
 	</head>
 	<body>
 <style>
