@@ -7,9 +7,16 @@ const Carousel3D = () => {
   const images = [
     
     "https://static.wixstatic.com/media/3780e2_7ef9a76080174104bdd362f4f0ae70bd~mv2.jpg/v1/fill/w_640,h_420,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/3780e2_7ef9a76080174104bdd362f4f0ae70bd~mv2.jpg",
-    "https://static.wixstatic.com/media/3780e2_f3e45d53a3024cec9544467e4db5a20f~mv2.jpg/v1/fill/w_503,h_335,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/3780e2_f3e45d53a3024cec9544467e4db5a20f~mv2.jpg",
-    "https://static.wixstatic.com/media/3780e2_6c23ba6c8576400c9270c50f33e8d2ea~mv2_d_2048_1367_s_2.jpg/v1/fill/w_502,h_335,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/3780e2_6c23ba6c8576400c9270c50f33e8d2ea~mv2_d_2048_1367_s_2.jpg",
-    "https://static.wixstatic.com/media/3780e2_fe95d580086e45658efdba6898c62114~mv2_d_3870_2583_s_4_2.jpg/v1/fill/w_685,h_457,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/3780e2_fe95d580086e45658efdba6898c62114~mv2_d_3870_2583_s_4_2.jpg"
+    '../../img/1.jpg',
+    '../../img/16.jpg',
+
+    , '../../img/2.jpg'
+    , '../../img/3.jpg',
+
+    '../../img/5.jpg',
+
+    '../../img/7.jpg',
+    '../../img/8.jpg'
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
