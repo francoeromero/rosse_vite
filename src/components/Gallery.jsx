@@ -1,6 +1,23 @@
 
 import React, { useState } from 'react';
 import img1 from '../../img/1.jpg';
+import img2 from '../../img/2.jpg';
+import img3 from '../../img/3.jpg';
+import img4 from '../../img/4.jpg';
+import img5 from '../../img/5.jpg';
+import img6 from '../../img/6.jpg';
+import img7 from '../../img/7.jpg';
+import img8 from '../../img/8.jpg';
+import img9 from '../../img/9.jpg';
+import img10 from '../../img/10.jpg';
+import img11 from '../../img/11.jpg';
+import img12 from '../../img/12.jpg';
+import img13 from '../../img/13.jpg';
+import img14 from '../../img/14.jpg';
+import img15 from '../../img/15.jpg';
+import img16 from '../../img/16.jpg';
+
+
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ZoomIn } from 'lucide-react';
 
@@ -10,6 +27,21 @@ const Gallery = () => {
   const images = [
   
     img1,
+    img2,
+    img3,
+    img4,
+    img5,
+    img6,
+    img7,
+    img8,
+    img9,
+    img10,
+    img11,
+    img12,
+    img13,
+    img14,
+    img15,
+    img16,
     "https://static.wixstatic.com/media/3780e2_f3e45d53a3024cec9544467e4db5a20f~mv2.jpg/v1/fill/w_503,h_335,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/3780e2_f3e45d53a3024cec9544467e4db5a20f~mv2.jpg",
   
 
