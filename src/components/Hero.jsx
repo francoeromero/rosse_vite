@@ -18,6 +18,18 @@ const Hero = () => {
 
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center hero-bg">
+      {/* Background video */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <video
+          className="w-full h-full object-cover"
+          src="/clips/fondo_eventos.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-hidden="true"
+        />
+      </div>
       <div className="absolute inset-0 bg-gradient-to-r from-rose-900/30 via-purple-900/20 to-blue-900/30"></div>
       
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">

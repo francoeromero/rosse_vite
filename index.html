@@ -98,6 +98,34 @@
 	100% { opacity: 0; }
 }
 
+/* Floating WhatsApp Button */
+.whatsapp-float {
+	position: fixed;
+	margin: 1rem;
+	right: 18px;
+	bottom: 18px;
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: #25D366;
+	box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+	z-index: 9999; /* debajo del overlay de carga (que usa 99999999) */
+	transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+.whatsapp-float:hover {
+	transform: translateY(-2px) scale(1.03);
+	box-shadow: 0 10px 22px rgba(0,0,0,0.3);
+}
+.whatsapp-float img {
+	width: 60%;
+	height: 60%;
+	object-fit: contain;
+	border-radius: 50%; /* asegura radio 50% sobre la imagen también */
+}
+
 </style>
 <div class="loading-page" >
 
@@ -212,6 +240,26 @@ loadingTimeline
 
 
 		<div id="root"></div>
+
+		<!-- Floating WhatsApp Button -->
+		<a id="whatsapp-float" class="whatsapp-float" aria-label="WhatsApp" target="_blank" rel="noopener"
+		   href="https://wa.me/5491112345678?text=Hola%21%20Vengo%20desde%20el%20sitio%20web.">
+			<img  src="https://static.vecteezy.com/system/resources/previews/021/495/946/non_2x/whatsapp-logo-icon-free-png.png" alt="WhatsApp" />
+		</a>
+
+		<script>
+		  // Configura aquí tu número de WhatsApp en formato internacional sin '+' ni espacios.
+		  // Ejemplo Argentina: 54911XXXXYYYY +54 9 11 6207-5702
+		  (function() {
+		    var number = (window.WHATSAPP_NUMBER || '5491162075702').toString().replace(/\D/g, '');
+		    var preset = encodeURIComponent('Hola! Vengo desde el sitio web.');
+		    var a = document.getElementById('whatsapp-float');
+		    if (a && number) {
+		      a.href = 'https://wa.me/' + number + '?text=' + preset;
+		    }
+		  })();
+		</script>
+
 		<script type="module" src="/src/main.jsx"></script>
 	</body>
 </html>
