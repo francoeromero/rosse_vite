@@ -6,24 +6,48 @@
 		<meta name="generator" content="ROSSE VITA" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>ROSSE VITA - Salón de Eventos Elegante</title>
-		<!-- Preload background video early using Vite-resolved URL -->
+		<!-- Preload background video early using Vite-resolved URL and begin buffering during loader -->
 		<script type="module">
 		  // Resolve asset URL via Vite so it works in dev and production (Netlify)
 		  import videoUrl from './clips/fondo_eventos.mp4';
+		  // Hint browser to prioritize download
 		  const link = document.createElement('link');
 		  link.rel = 'preload';
 		  link.as = 'video';
 		  link.href = videoUrl;
 		  link.crossOrigin = 'anonymous';
 		  document.head.appendChild(link);
+
+		  // Create a hidden <video> to actively buffer while loader is visible
+		  const v = document.createElement('video');
+		  v.src = videoUrl;
+		  v.preload = 'auto';
+		  v.muted = true;
+		  v.playsInline = true;
+		  v.setAttribute('aria-hidden', 'true');
+		  v.style.position = 'absolute';
+		  v.style.left = '-99999px';
+		  v.style.width = '1px';
+		  v.style.height = '1px';
+		  window.__preloadBgVideo = v;
+		  // Append after DOM is ready so it's in the document flow and starts fetching reliably
+		  document.addEventListener('DOMContentLoaded', () => {
+		    try {
+		      document.body.appendChild(v);
+		      // Kick off network request early
+		      v.load();
+		    } catch (e) {}
+		  });
 		</script>
 	</head>
 	<body>
+
+
+
 <style>
 	
 .loading-page {
-	position: fixed;
-	top: 0;
+	position: fixed;top: 0;
 	left: 0;
 	background: linear-gradient(135deg, #2c2d2e 0%, #b13d88 50%, #2c2d2e 100%);
 	z-index: 99999999 !important;
@@ -181,21 +205,43 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Animación de la página de carga con GSAP
+// Helper: esperar a que el video esté listo (o máximo 3s)
+function waitForBackgroundVideo(maxWait = 3000) {
+	return new Promise((resolve) => {
+		const v = window.__preloadBgVideo;
+		const done = () => resolve();
+		// Si ya está listo (HAVE_FUTURE_DATA=3 o HAVE_ENOUGH_DATA=4)
+		if (v && v.readyState >= 3) return resolve();
+		let resolved = false;
+		const onReady = () => { if (!resolved) { resolved = true; resolve(); } };
+		if (v) {
+			v.addEventListener('canplaythrough', onReady, { once: true });
+			v.addEventListener('loadeddata', onReady, { once: true });
+		}
+		setTimeout(onReady, maxWait);
+	});
+}
+
 const loadingTimeline = gsap.timeline({
-  onComplete: function() {
-    // Cuando termina la animación de carga, mostrar la aplicación React RÁPIDAMENTE
-    const root = document.getElementById('root');
-    if (root) {
-      gsap.to(root, {
-        opacity: 1,
-        duration: 0.2,        // Reducido de 1 a 0.2 segundos
-        ease: "power2.out",
-        onComplete: function() {
-          console.log('Aplicación React visible');
-        }
-      });
-    }
-  }
+	onComplete: async function() {
+		// Esperar a que el video de fondo esté listo (o hasta el timeout)
+		await waitForBackgroundVideo(3000);
+
+		// Desvanecer y ocultar la pantalla de carga
+		gsap.to('.loading-page', {
+			opacity: 0,
+			duration: 0.3,
+			ease: 'power2.inOut',
+			onComplete: function() {
+				gsap.set('.loading-page', { display: 'none' });
+				// Mostrar la app React rápidamente
+				const root = document.getElementById('root');
+				if (root) {
+					gsap.to(root, { opacity: 1, duration: 0.2, ease: 'power2.out' });
+				}
+			}
+		});
+	}
 });
 
 // Inicializar estados
@@ -229,17 +275,7 @@ loadingTimeline
       ease: "power2.out"
     })
   ], "-=1.5") // Empiezan 1.5 segundos antes del final del logo para mantener tiempo total   
-  
-  
-  .to(".loading-page", {
-    opacity: 0,
-    duration: 0.3,      // Duración rápida para desaparición
-    ease: "power2.inOut",
-    delay: 0.2          // Pequeño delay después de que terminen las animaciones
-  })                   // Empieza inmediatamente después de las animaciones
-  .set(".loading-page", {
-    display: "none"
-  });
+	// La salida del loader ahora sucede en onComplete tras esperar el video
   
 </script>
 
