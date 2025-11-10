@@ -6,39 +6,7 @@
 		<meta name="generator" content="ROSSE VITA" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>ROSSE VITA - Salón de Eventos Elegante</title>
-		<!-- Preload background video early using Vite-resolved URL and begin buffering during loader -->
-		<script type="module">
-		  // Resolve asset URL via Vite so it works in dev and production (Netlify)
-		  import videoUrl from './clips/fondo_eventos.mp4';
-		  // Hint browser to prioritize download
-		  const link = document.createElement('link');
-		  link.rel = 'preload';
-		  link.as = 'video';
-		  link.href = videoUrl;
-		  link.crossOrigin = 'anonymous';
-		  document.head.appendChild(link);
-
-		  // Create a hidden <video> to actively buffer while loader is visible
-		  const v = document.createElement('video');
-		  v.src = videoUrl;
-		  v.preload = 'auto';
-		  v.muted = true;
-		  v.playsInline = true;
-		  v.setAttribute('aria-hidden', 'true');
-		  v.style.position = 'absolute';
-		  v.style.left = '-99999px';
-		  v.style.width = '1px';
-		  v.style.height = '1px';
-		  window.__preloadBgVideo = v;
-		  // Append after DOM is ready so it's in the document flow and starts fetching reliably
-		  document.addEventListener('DOMContentLoaded', () => {
-		    try {
-		      document.body.appendChild(v);
-		      // Kick off network request early
-		      v.load();
-		    } catch (e) {}
-		  });
-		</script>
+				<!-- Eliminada referencia a fondo_eventos.mp4 para evitar error de build. El resto del diseño se mantiene intacto. -->
 	</head>
 	<body>
 
