@@ -29,23 +29,18 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.instagram.com/rossevitaeventos?igsh=MWYxcHNxNDBldW01YQ=="
                 className="bg-gradient-to-r from-pink-500 to-rose-500 p-3 rounded-lg text-white hover:scale-110 transition-transform duration-300"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/"
                 className="bg-gradient-to-r from-blue-500 to-blue-600 p-3 rounded-lg text-white hover:scale-110 transition-transform duration-300"
               >
                 <Facebook className="w-5 h-5" />
               </a>
-              <a
-                href="#"
-                className="bg-gradient-to-r from-sky-400 to-blue-500 p-3 rounded-lg text-white hover:scale-110 transition-transform duration-300"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
+             
             </div>
           </motion.div>
 
@@ -80,15 +75,19 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-rose-400" />
-                <span className="text-gray-300 text-sm">Av. Corrientes 1234, CABA</span>
+                <span className="text-gray-300 text-sm">Av. Constituyentes 1434 , Provincia de Buenos Aires, Argentina</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <MapPin className="w-5 h-5 text-rose-400" />
+                <span className="text-gray-300 text-sm">AV Illia 1989, Villa Maipú, CABA, Argentina</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-rose-400" />
-                <span className="text-gray-300 text-sm">+54 9 11 1234-5678</span>
+                <span className="text-gray-300 text-sm">+54 9 11 6207 5702</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-rose-400" />
-                <span className="text-gray-300 text-sm">info@saloneventos.com</span>
+                <span className="text-gray-300 text-sm">eventosrossevita@gmail.com</span>
               </div>
             </div>
           </motion.div>

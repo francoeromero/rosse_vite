@@ -25,7 +25,7 @@ const Services = () => {
     },
     {
       icon: Star,
-      title: 'Quinceañeros',
+      title: 'Quinceañeras',
       description: 'Una noche mágica para celebrar los 15 años con elegancia y sofisticación.',
       color: 'from-pink-400 to-rose-500'
     },

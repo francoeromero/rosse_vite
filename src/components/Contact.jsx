@@ -231,7 +231,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-800">Dirección</h4>
-                    <p className="text-gray-600">Av. Corrientes 1234, CABA, Argentina</p>
+                    <p className="text-gray-600">Av. Constituyentes 1434 , Provincia de Buenos Aires, Argentina</p>
+                    <p className="text-gray-600">AV ILLIA 1989, Villa Maipú, CABA, Argentina</p>
                   </div>
                 </div>
 
@@ -241,7 +242,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-800">Teléfono</h4>
-                    <p className="text-gray-600">+54 9 11 1234-5678</p>
+                    <p className="text-gray-600">+54 9 11 6207 5702</p>
                   </div>
                 </div>
 
@@ -251,7 +252,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-800">Email</h4>
-                    <p className="text-gray-600">info@saloneventos.com</p>
+                    <p className="text-gray-600">eventosrossevita@gmail.com</p>
                   </div>
                 </div>
 
@@ -273,23 +274,23 @@ const Contact = () => {
               
               <div className="flex space-x-4">
                 <a
-                  href="#"
+                  href="https://www.instagram.com/rossevitaeventos?igsh=MWYxcHNxNDBldW01YQ=="
                   className="bg-gradient-to-r from-pink-500 to-rose-500 p-3 rounded-lg text-white hover:scale-110 transition-transform duration-300"
                 >
                   <Instagram className="w-6 h-6" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.facebook.com/"
                   className="bg-gradient-to-r from-blue-500 to-blue-600 p-3 rounded-lg text-white hover:scale-110 transition-transform duration-300"
                 >
                   <Facebook className="w-6 h-6" />
                 </a>
-                <a
+                {/* <a
                   href="#"
                   className="bg-gradient-to-r from-sky-400 to-blue-500 p-3 rounded-lg text-white hover:scale-110 transition-transform duration-300"
                 >
                   <Twitter className="w-6 h-6" />
-                </a>
+                </a> */}
               </div>
             </div>
           </motion.div>
